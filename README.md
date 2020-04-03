@@ -6,8 +6,7 @@ A simple todolist app made in Xamarin.
   - Create Post it notes.
   - Save Post it notes.
   - Delete Post it notes.
-  
-  Add location to post it notes.
+  - Add location to post it notes.
 
 ## Planned Features:
   - Load Post it notes.
