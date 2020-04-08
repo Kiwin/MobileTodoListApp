@@ -22,13 +22,13 @@ namespace TodoListApp.Services
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(Guid id)
+        public async Task<bool> DeleteItemAsync(int id)
         {
             var itemToRemove = items.FirstOrDefault(item => item.Id == id); ;
             return await Task.FromResult(items.Remove(itemToRemove));
         }
 
-        public async Task<T> GetItemAsync(Guid id)
+        public async Task<T> GetItemAsync(int id)
         {
             return await Task.FromResult(items.FirstOrDefault(item => item.Id == id));
         }

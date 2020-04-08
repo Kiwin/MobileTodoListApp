@@ -25,9 +25,9 @@ namespace TodoListApp.Droid
 
             string sqliteDbFileName = "PostItNote_db.db3";
             string personalFolderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string fullPath = Path.Combine(personalFolderPath,sqliteDbFileName);
+            string fullFilePath = Path.Combine(personalFolderPath,sqliteDbFileName);
 
-            LoadApplication(new App(fullPath));
+            LoadApplication(new App(fullFilePath));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

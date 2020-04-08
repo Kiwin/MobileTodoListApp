@@ -5,14 +5,14 @@ using System.Runtime.CompilerServices;
 
 using Xamarin.Forms;
 
-using TodoListApp.Models;
 using TodoListApp.Services;
+using TodoListApp.Models;
 
 namespace TodoListApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<PostItNote> DataStore => DependencyService.Get<IDataStore<PostItNote>>();
+        public IDataStore<Note> DataStore => DependencyService.Get<IDataStore<Note>>();
 
         bool isBusy = false;
         public bool IsBusy

@@ -16,34 +16,34 @@ namespace TodoListApp.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class ItemsPage : ContentPage
+    public partial class NotesPage : ContentPage
     {
-        ItemsViewModel viewModel;
+        readonly NotesModelView viewModel;
 
-        public ItemsPage()
+        public NotesPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
+            BindingContext = viewModel = new NotesModelView();
         }
 
         async void OnItemSelected(object sender, EventArgs args)
         {
             var layout = (BindableObject)sender;
-            var item = (PostItNote)layout.BindingContext;
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+            var item = (Note)layout.BindingContext;
+            await Navigation.PushAsync(new NoteDetailPane(new ItemDetailViewModel(item)));
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new NewPostItNotePage()));
+            await Navigation.PushModalAsync(new NavigationPage(new NewNotePage()));
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            if (viewModel.Items.Count == 0)
+            if (viewModel.Notes.Count == 0)
                 viewModel.IsBusy = true;
         }
     }

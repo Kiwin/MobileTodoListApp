@@ -11,54 +11,54 @@ namespace TodoListApp.Tests.Services
         [Fact]
         public async void AddItemAsync_Should_Add_Item_To_Store()
         {
-            var dataStore = new TodoListApp.Services.IdentifiablesDataStore<PostItNote>();
-            var postItNote = new PostItNote();
+            var dataStore = new TodoListApp.Services.IdentifiablesDataStore<Note>();
+            var note = new Note(1);
             
-            await dataStore.AddItemAsync(postItNote);
+            await dataStore.AddItemAsync(note);
 
-            var retrievedPostItNote = await dataStore.GetItemAsync(postItNote.Id);
-            Assert.Equal(retrievedPostItNote, postItNote);
+            var retrievedPostItNote = await dataStore.GetItemAsync(note.Id);
+            Assert.Equal(retrievedPostItNote, note);
         }
 
         [Fact]
         public async void GetItemAsync_Should_Retrieve_Item_From_Store()
         {
-            var dataStore = new TodoListApp.Services.IdentifiablesDataStore<PostItNote>();
-            var postItNote = new PostItNote();
+            var dataStore = new TodoListApp.Services.IdentifiablesDataStore<Note>();
+            var note = new Note(1);
 
-            await dataStore.AddItemAsync(postItNote);
+            await dataStore.AddItemAsync(note);
 
-            var retrievedPostItNote = await dataStore.GetItemAsync(postItNote.Id);
-            Assert.Equal(retrievedPostItNote, postItNote);
+            var retrievedPostItNote = await dataStore.GetItemAsync(note.Id);
+            Assert.Equal(retrievedPostItNote, note);
         }
 
         [Fact]
         public async void DeleteItemAsync_Should_Remove_Item_From_Store()
         {
-            var dataStore = new TodoListApp.Services.IdentifiablesDataStore<PostItNote>();
-            var postItNote = new PostItNote();
+            var dataStore = new TodoListApp.Services.IdentifiablesDataStore<Note>();
+            var note = new Note(1);
 
-            await dataStore.AddItemAsync(postItNote);
-            await dataStore.DeleteItemAsync(postItNote.Id);
+            await dataStore.AddItemAsync(note);
+            await dataStore.DeleteItemAsync(note.Id);
 
-            var retrievedPostItNote = await dataStore.GetItemAsync(postItNote.Id);
+            var retrievedPostItNote = await dataStore.GetItemAsync(note.Id);
             Assert.Null(retrievedPostItNote);
         }
 
         [Fact]
         public async void GetItemAsync_Should_Retrieve_All_Items_From_Store()
         {
-            var dataStore = new TodoListApp.Services.IdentifiablesDataStore<PostItNote>();
-            var postItNote = new PostItNote();
-            var postItNote2 = new PostItNote();
-            var postItNote3 = new PostItNote();
+            var dataStore = new TodoListApp.Services.IdentifiablesDataStore<Note>();
+            var note = new Note(1);
+            var note2 = new Note(2);
+            var note3 = new Note(3);
 
-            await dataStore.AddItemAsync(postItNote);
-            await dataStore.AddItemAsync(postItNote2);
-            await dataStore.AddItemAsync(postItNote3);
+            await dataStore.AddItemAsync(note);
+            await dataStore.AddItemAsync(note2);
+            await dataStore.AddItemAsync(note3);
 
             var items = await dataStore.GetAllItemsAsync();
-            var expectedItems = new List<PostItNote> { postItNote, postItNote2, postItNote3 };
+            var expectedItems = new List<Note> { note, note2, note3 };
             Assert.Equal(items, expectedItems);
         }
     }

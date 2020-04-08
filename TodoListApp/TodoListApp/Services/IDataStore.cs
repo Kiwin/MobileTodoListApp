@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace TodoListApp.Services
@@ -8,8 +7,8 @@ namespace TodoListApp.Services
     {
         Task<bool> AddItemAsync(T item);
         Task<bool> UpdateItemAsync(T item);
-        Task<bool> DeleteItemAsync(Guid id);
-        Task<T> GetItemAsync(Guid id);
+        Task<bool> DeleteItemAsync(int id);
+        Task<T> GetItemAsync(int id);
         Task<IEnumerable<T>> GetAllItemsAsync(bool forceRefresh = false);
     }
 }

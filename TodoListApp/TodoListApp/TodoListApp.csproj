@@ -18,19 +18,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\PostItNotesPage.xaml.cs">
-      <DependentUpon>PostItNotesPage.xaml</DependentUpon>
+    <Compile Update="Views\NotesPage.xaml.cs">
+      <DependentUpon>NotesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\PostItNoteDetailPage.xaml.cs">
-      <DependentUpon>PostItNoteDetailPage.xaml</DependentUpon>
+    <Compile Update="Views\NoteDetailPage.xaml.cs">
+      <DependentUpon>NoteDetailPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\NewPostItNotePage.xaml.cs">
-      <DependentUpon>NewPostItNotePage.xaml</DependentUpon>
+    <Compile Update="Views\NewNotePage.xaml.cs">
+      <DependentUpon>NewNotePage.xaml</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\Sqlite\" />
   </ItemGroup>
 
   <ItemGroup>

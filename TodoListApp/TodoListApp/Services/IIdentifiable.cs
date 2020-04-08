@@ -6,6 +6,6 @@ namespace TodoListApp.Services
 {
     public interface IIdentifiable
     {
-        Guid Id { get; }
+        int Id { get; }
     }
 }

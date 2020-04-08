@@ -4,12 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TodoListApp.Views.NewItemPage"
+             x:Class="TodoListApp.Views.NewNotePage"
              Title="New Item">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+        <ToolbarItem Text="Cancel"  />
+        <ToolbarItem Text="Save" />
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>

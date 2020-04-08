@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using Foundation;
@@ -23,7 +24,12 @@ namespace TodoListApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+
+            string sqliteDbFileName = "PostItNote_db.db3";
+            string personalFolderPath = Path.Combine(Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "..", "Library");
+            string fullFilePath = Path.Combine(personalFolderPath, sqliteDbFileName);
+
+            LoadApplication(new App(fullFilePath));
 
             return base.FinishedLaunching(app, options);
         }
